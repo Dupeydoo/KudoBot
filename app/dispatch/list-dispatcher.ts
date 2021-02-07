@@ -24,7 +24,7 @@ export class ListDispatcher extends Dispatcher {
         let result = await ListFromDb({ userIdHash: hash },
             this.SortColumn, this.PageSize, PageNum) as KudoDocument[];
 
-        if(result.length == 0)
+        if(result.length === 0)
             return "That's all folks!";
         return this.buildBlockResult(result, PageNum, UserId);
     }

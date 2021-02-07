@@ -98,7 +98,7 @@ export const HelpBlock = {
 			type: "section",
 			text: {
 				type: "mrkdwn",
-				text: "1. To send someone Kudos, you can type the following command:\n```\n\\kudo send @mention message\n```\n\n2. To view all your Kudos, you can type the following command:\n```\n\\kudo list\n```\n\n3. To see how many Kudos you have received, you can type the following command:\n```\n\\kudo count\n```"
+				text: "1. To send someone Kudos, you can type the following command:\n```\n\/kudo send @mention message\n```\n\n2. To view all your Kudos, you can type the following command:\n```\n\/kudo list\n```\n\n3. To see how many Kudos you have received, you can type the following command:\n```\n\/kudo count\n```"
 			}
 		},
 		{
