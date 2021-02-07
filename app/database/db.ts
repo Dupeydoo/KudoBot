@@ -13,14 +13,16 @@ export const InsertIntoDb = (doc) => {
     })
 };
 
-export const ListFromDb = (searchObj) => { 
+export const ListFromDb = (searchObj, colSort, pageSize, pageNum) => { 
     return new Promise(function(resolve, reject) {
-        Db.find(searchObj, function(err, docs) {
-            if(err) {
-                return reject(err);
-            }
-            resolve(docs);
-        });
+        Db.find(searchObj).sort({ colSort: 1 })
+            .skip(pageNum * pageSize).limit(pageSize)
+            .exec(function(err, docs) {
+                if(err) {
+                    return reject(err);
+                }
+                resolve(docs);
+            });
     });
 };
 

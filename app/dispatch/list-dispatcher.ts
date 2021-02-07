@@ -15,7 +15,8 @@ export class ListDispatcher extends Dispatcher {
         let hasher = new Hasher(userId);
         const hash = await hasher.generateHash();
 
-        let result = await ListFromDb({ userIdHash: hash }) as KudoDocument[];
+        let result = await ListFromDb({ userIdHash: hash },
+            'sender', 5, 0) as KudoDocument[];
         return this.buildBlockResult(result);
     }
 
