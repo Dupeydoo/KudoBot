@@ -62,3 +62,20 @@ export const SentKudosBlock = {
 		}
 	]
 }
+
+export const KudoCountBlock = {
+        blocks: [
+            {
+                type: "section",
+                text: {
+                    type: "mrkdwn",
+                    text: "You have placeholder Kudos."
+                },
+                accessory: {
+                    type: "image",
+                    image_url: "http://placekitten.com/200/300",
+                    alt_text: "cute cat"
+                }
+            }
+        ]
+}

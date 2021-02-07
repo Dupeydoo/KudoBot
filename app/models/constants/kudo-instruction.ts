@@ -1,4 +1,5 @@
 export enum KudoInstruction {
     Send = 'send',
-    List = 'list'
+    List = 'list',
+    Count = 'count'
 }

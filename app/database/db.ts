@@ -20,6 +20,17 @@ export const ListFromDb = (searchObj) => {
                 return reject(err);
             }
             resolve(docs);
-        })
-    })
+        });
+    });
 };
+
+export const CountKudosInDb = (searchObj) => {
+    return new Promise(function(resolve, reject) {
+        Db.count(searchObj, function(err, count) {
+            if(err) {
+                return reject(err);
+            }
+            resolve(count);
+        });
+    });
+}

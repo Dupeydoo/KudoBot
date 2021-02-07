@@ -3,6 +3,7 @@ import { KudoCommand } from "../models/kudo-command";
 import { SendDispatcher } from "./send-dispatcher";
 import { Dispatcher } from "./dispatcher";
 import { ListDispatcher } from "./list-dispatcher";
+import { CountDispatcher } from "./count-dispatcher";
 
 
 export class DispatcherFactory {
@@ -14,6 +15,9 @@ export class DispatcherFactory {
 
             case KudoInstruction.List:
                 return new ListDispatcher(command.arguments, sourceCommand);
+
+            case KudoInstruction.Count:
+                return new CountDispatcher(command.arguments, sourceCommand);
         }
     };
 }
