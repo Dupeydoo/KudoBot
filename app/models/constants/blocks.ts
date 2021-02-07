@@ -10,7 +10,7 @@ export const ListStartBlock = [
     {
         type: "divider"
     }
-]
+];
 
 export const ListEndBlock = [
     {
@@ -31,7 +31,7 @@ export const ListEndBlock = [
             }
         ]
     }
-]
+];
 
 export const SentKudosBlock = {
 	blocks: [
@@ -62,7 +62,7 @@ export const SentKudosBlock = {
 			type: "divider"
 		}
 	]
-}
+};
 
 export const KudoCountBlock = {
         blocks: [
@@ -79,4 +79,30 @@ export const KudoCountBlock = {
                 }
             }
         ]
-}
+};
+
+export const HelpBlock = {
+	blocks: [
+		{
+			type: "divider"
+		},
+		{
+			type: "header",
+			text: {
+				type: "plain_text",
+				text: "How to give Kudos",
+				emoji: true
+			}
+		},
+		{
+			type: "section",
+			text: {
+				type: "mrkdwn",
+				text: "1. To send someone Kudos, you can type the following command:\n```\n\\kudo send @mention message\n```\n\n2. To view all your Kudos, you can type the following command:\n```\n\\kudo list\n```\n\n3. To see how many Kudos you have received, you can type the following command:\n```\n\\kudo count\n```"
+			}
+		},
+		{
+			type: "divider"
+		}
+	]
+};

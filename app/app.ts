@@ -3,6 +3,7 @@ import { DispatcherFactory } from "./dispatch/dispatcher-factory";
 import { KudoRoute } from "./models/constants/routes";
 import { KudoCommand } from "./models/kudo-command";
 import { KudoInstruction } from "./models/constants/kudo-instruction";
+import { HelpBlock } from "./models/constants/blocks";
 
 const { App } = require("@slack/bolt");
 
@@ -22,7 +23,7 @@ app.command(KudoRoute, async ({command, ack, say}) => {
 
     await say(result);
   } catch(ex) {
-      await say(ex.message);
+      await say(HelpBlock);
   }
 });
 
@@ -39,7 +40,7 @@ app.action('next_list_page', async ({ ack, say, action }) => {
   }
 
   catch(ex) {
-    await say(ex.message);
+    await say(HelpBlock);
   }
 });
 
