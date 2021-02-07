@@ -26,7 +26,8 @@ export const ListEndBlock = [
                     emoji: true,
                     text: "Next 5 Kudos"
                 },
-                value: "click_me_123"
+                value: "next_list_page",
+                action_id: "next_list_page"
             }
         ]
     }

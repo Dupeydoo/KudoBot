@@ -1,6 +1,8 @@
 import { KudoParser } from "./parsing/kudo-parser";
 import { DispatcherFactory } from "./dispatch/dispatcher-factory";
 import { KudoRoute } from "./models/constants/routes";
+import { KudoCommand } from "./models/kudo-command";
+import { KudoInstruction } from "./models/constants/kudo-instruction";
 
 const { App } = require("@slack/bolt");
 
@@ -21,6 +23,23 @@ app.command(KudoRoute, async ({command, ack, say}) => {
     await say(result);
   } catch(ex) {
       await say(ex.message);
+  }
+});
+
+app.action('next_list_page', async ({ ack, say, action }) => {
+  await ack();
+
+  try {
+    const dispatcher = DispatcherFactory
+      .createInstance(<KudoCommand>
+        { instruction: KudoInstruction.List }, action);
+    let result = await dispatcher.dispatch();
+
+    await say(result);
+  }
+
+  catch(ex) {
+    await say(ex.message);
   }
 });
 
