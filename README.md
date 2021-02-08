@@ -18,9 +18,14 @@ To list your previous Kudos:
 
 The list command supports paging with a button, and the results are ordered by sender name.
 
-Finally, to count the total number of Kudos you have received from other users:
+To count the total number of Kudos you have received from other users:
 ```
 /kudo count
+```
+
+To view the help for the bot and see the commands above:
+```
+/kudo help
 ```
 
 Please note, the bolt server is just one side of the story, and a corresponding Slack application must be created through Slack's API tools. 
